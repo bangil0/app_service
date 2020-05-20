@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appGroupMembersResult" type="AppGroupMembersBean">
+		<result property="groupId" column="group_id"/>
+		<result property="groupMemberId" column="group_member_id"/>
+		<result property="username" column="username"/>
+	</resultMap>
+
+	<select id="countAppGroupMembersSearch" parameterType="com.micro.msb.beans.AppGroupMembersSearchBean" resultType="Integer">
+		select count(*) from app_group_members
+		<where>
+			<if test="groupId!=null">
+				group_id like #{groupId}
+			</if>
+			<if test="groupMemberId!=null">
+				group_member_id like #{groupMemberId}
+			</if>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppGroupMembers" parameterType="com.micro.msb.beans.AppGroupMembersSearchBean" resultMap="appGroupMembersResult">         
+		select * from app_group_members  
+		<where>
+			<if test="groupId!=null">
+				group_id like #{groupId}
+			</if>
+			<if test="groupMemberId!=null">
+				group_member_id like #{groupMemberId}
+			</if>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

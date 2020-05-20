@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appProductAttributeWriteResult" type="AppProductAttributeWriteBean">
+		<result property="productCode" column="product_code"/>
+		<result property="textAttribute01" column="text_attribute_01"/>
+		<result property="textAttribute02" column="text_attribute_02"/>
+		<result property="textAttribute03" column="text_attribute_03"/>
+		<result property="textAttribute04" column="text_attribute_04"/>
+		<result property="textAttribute05" column="text_attribute_05"/>
+		<result property="textAttribute06" column="text_attribute_06"/>
+		<result property="textAttribute07" column="text_attribute_07"/>
+		<result property="textAttribute08" column="text_attribute_08"/>
+		<result property="textAttribute09" column="text_attribute_09"/>
+		<result property="textAttribute10" column="text_attribute_10"/>
+		<result property="intAttribute01" column="int_attribute_01"/>
+		<result property="intAttribute02" column="int_attribute_02"/>
+		<result property="intAttribute03" column="int_attribute_03"/>
+		<result property="intAttribute04" column="int_attribute_04"/>
+		<result property="intAttribute05" column="int_attribute_05"/>
+		<result property="lastUpdate" column="last_update"/>
+	</resultMap>
+	
+	<update id="writeAppProductAttribute" parameterType="com.micro.msb.beans.AppProductAttributeWriteBean">
+		update app_product_attribute set product_code = #{productCode},
+		text_attribute_01 = #{textAttribute01},
+		text_attribute_02 = #{textAttribute02},
+		text_attribute_03 = #{textAttribute03},
+		text_attribute_04 = #{textAttribute04},
+		text_attribute_05 = #{textAttribute05},
+		text_attribute_06 = #{textAttribute06},
+		text_attribute_07 = #{textAttribute07},
+		text_attribute_08 = #{textAttribute08},
+		text_attribute_09 = #{textAttribute09},
+		text_attribute_10 = #{textAttribute10},
+		int_attribute_01 = #{intAttribute01},
+		int_attribute_02 = #{intAttribute02},
+		int_attribute_03 = #{intAttribute03},
+		int_attribute_04 = #{intAttribute04},
+		int_attribute_05 = #{intAttribute05},
+		last_update = #{lastUpdate} where product_code = #{productCode};
+	</update>
+
+</mapper>

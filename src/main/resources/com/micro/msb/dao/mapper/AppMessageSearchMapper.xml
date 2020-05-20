@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appMessageResult" type="AppMessageBean">
+		<result property="username" column="username"/>
+		<result property="jid" column="jid"/>
+		<result property="msgtime" column="msgtime"/>
+		<result property="msgtype" column="msgType"/>
+		<result property="msgsubject" column="msgSubject"/>
+		<result property="msgtext" column="msgText"/>
+	</resultMap>
+
+	<select id="countAppMessageSearch" parameterType="com.micro.msb.beans.AppMessageSearchBean" resultType="Integer">
+		select count(*) from app_message
+		<where>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+			<if test="jid!=null">
+				jid like #{jid}
+			</if>
+			<if test="msgtime!=null">
+				msgtime like #{msgtime}
+			</if>
+			<if test="msgtype!=null">
+				msgType like #{msgtype}
+			</if>
+			<if test="msgsubject!=null">
+				msgSubject like #{msgsubject}
+			</if>
+			<if test="msgtext!=null">
+				msgText like #{msgtext}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppMessage" parameterType="com.micro.msb.beans.AppMessageSearchBean" resultMap="appMessageResult">         
+		select * from app_message  
+		<where>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+			<if test="jid!=null">
+				jid like #{jid}
+			</if>
+			<if test="msgtime!=null">
+				msgtime like #{msgtime}
+			</if>
+			<if test="msgtype!=null">
+				msgType like #{msgtype}
+			</if>
+			<if test="msgsubject!=null">
+				msgSubject like #{msgsubject}
+			</if>
+			<if test="msgtext!=null">
+				msgText like #{msgtext}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

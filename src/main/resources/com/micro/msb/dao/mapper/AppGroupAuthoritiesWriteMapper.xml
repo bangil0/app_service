@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appGroupAuthoritiesWriteResult" type="AppGroupAuthoritiesWriteBean">
+		<result property="groupId" column="group_id"/>
+		<result property="authority" column="authority"/>
+	</resultMap>
+	
+	<update id="writeAppGroupAuthorities" parameterType="com.micro.msb.beans.AppGroupAuthoritiesWriteBean">
+		update app_group_authorities set group_id = #{groupId},
+		authority = #{authority} where group_id = #{groupId};
+	</update>
+
+</mapper>

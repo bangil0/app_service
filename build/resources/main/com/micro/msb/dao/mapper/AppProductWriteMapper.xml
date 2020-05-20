@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appProductWriteResult" type="AppProductWriteBean">
+		<result property="recordId" column="record_id"/>
+		<result property="productCode" column="product_code"/>
+		<result property="productName" column="product_name"/>
+		<result property="productDesc" column="product_desc"/>
+		<result property="categoryCode" column="category_code"/>
+	</resultMap>
+	
+	<update id="writeAppProduct" parameterType="com.micro.msb.beans.AppProductWriteBean">
+		update app_product set record_id = #{recordId},
+		product_code = #{productCode},
+		product_name = #{productName},
+		product_desc = #{productDesc},
+		category_code = #{categoryCode} where record_id = #{recordId};
+	</update>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appContractServiceNewResult" type="AppContractServiceNewBean">
+		<result property="recordId" column="record_id"/>
+		<result property="contractCode" column="contract_code"/>
+		<result property="contractType" column="contract_type"/>
+		<result property="serviceCode" column="service_code"/>
+		<result property="serviceStatus" column="service_status"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+	</resultMap>
+	
+	<insert id="newAppContractService" parameterType="com.micro.msb.beans.AppContractServiceNewBean">
+		insert into app_contract_service(record_id,contract_code,contract_type,service_code,service_status,start_date,end_date) 
+		values (#{recordId},#{contractCode},#{contractType},#{serviceCode},#{serviceStatus},#{startDate},#{endDate});
+	</insert>
+
+</mapper>

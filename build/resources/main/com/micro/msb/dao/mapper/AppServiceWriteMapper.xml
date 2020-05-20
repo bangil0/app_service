@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appServiceWriteResult" type="AppServiceWriteBean">
+		<result property="recordId" column="record_id"/>
+		<result property="serviceCode" column="service_code"/>
+		<result property="serviceName" column="service_name"/>
+		<result property="serviceDesc" column="service_desc"/>
+		<result property="categoryCode" column="category_code"/>
+	</resultMap>
+	
+	<update id="writeAppService" parameterType="com.micro.msb.beans.AppServiceWriteBean">
+		update app_service set record_id = #{recordId},
+		service_code = #{serviceCode},
+		service_name = #{serviceName},
+		service_desc = #{serviceDesc},
+		category_code = #{categoryCode} where record_id = #{recordId};
+	</update>
+
+</mapper>

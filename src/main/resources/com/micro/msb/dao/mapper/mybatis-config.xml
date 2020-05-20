@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.micro.msb.beans"/>
+    </typeAliases>
+    <mappers>
+    
+    <!-- SQL Map XML for Application -->    
+	
+	<mapper resource="com/micro/msb/dao/mapper/AppAuthoritiesSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppCategorySearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContactSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeviceSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractProductSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractServiceSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceAttributeSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceRecordsSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupAuthoritiesSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupMembersSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupsSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMenusSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMessageSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppPersistentLoginsSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductAttributeSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductRecordsSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppRoomSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceAttributeSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceRecordsSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppUsersSearchMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppAuthoritiesReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppCategoryReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContactReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeviceReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractProductReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractServiceReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceAttributeReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceRecordsReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupAuthoritiesReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupMembersReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupsReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMenusReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMessageReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppPersistentLoginsReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductAttributeReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductRecordsReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppRoomReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceAttributeReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceRecordsReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppUsersReadMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppAuthoritiesNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppCategoryNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContactNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeviceNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractProductNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractServiceNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceAttributeNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceRecordsNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupAuthoritiesNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupMembersNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupsNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMenusNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMessageNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppPersistentLoginsNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductAttributeNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductRecordsNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppRoomNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceAttributeNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceRecordsNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppUsersNewMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppAuthoritiesWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppCategoryWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContactWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeviceWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractProductWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractServiceWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceAttributeWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceRecordsWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupAuthoritiesWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupMembersWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupsWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMenusWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMessageWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppPersistentLoginsWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductAttributeWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductRecordsWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppRoomWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceAttributeWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceRecordsWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppUsersWriteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppAuthoritiesDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppCategoryDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContactDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractDeviceDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractProductDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppContractServiceDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceAttributeDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppDeviceRecordsDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupAuthoritiesDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupMembersDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppGroupsDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMenusDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppMessageDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppPersistentLoginsDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductAttributeDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppProductRecordsDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppRoomDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceAttributeDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppServiceRecordsDeleteMapper.xml"/>
+	<mapper resource="com/micro/msb/dao/mapper/AppUsersDeleteMapper.xml"/>
+	</mappers>	
+</configuration>

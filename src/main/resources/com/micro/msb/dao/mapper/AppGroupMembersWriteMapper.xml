@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appGroupMembersWriteResult" type="AppGroupMembersWriteBean">
+		<result property="groupId" column="group_id"/>
+		<result property="groupMemberId" column="group_member_id"/>
+		<result property="username" column="username"/>
+	</resultMap>
+	
+	<update id="writeAppGroupMembers" parameterType="com.micro.msb.beans.AppGroupMembersWriteBean">
+		update app_group_members set group_id = #{groupId},
+		group_member_id = #{groupMemberId},
+		username = #{username} where group_id = #{groupId};
+	</update>
+
+</mapper>

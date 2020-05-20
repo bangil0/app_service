@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appContractProductResult" type="AppContractProductBean">
+		<result property="recordId" column="record_id"/>
+		<result property="contractCode" column="contract_code"/>
+		<result property="contractType" column="contract_type"/>
+		<result property="productCode" column="product_code"/>
+		<result property="productStatus" column="product_status"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+	</resultMap>
+
+	<select id="countAppContractProductSearch" parameterType="com.micro.msb.beans.AppContractProductSearchBean" resultType="Integer">
+		select count(*) from app_contract_product
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="contractCode!=null">
+				contract_code like #{contractCode}
+			</if>
+			<if test="contractType!=null">
+				contract_type like #{contractType}
+			</if>
+			<if test="productCode!=null">
+				product_code like #{productCode}
+			</if>
+			<if test="productStatus!=null">
+				product_status like #{productStatus}
+			</if>
+			<if test="startDate!=null">
+				start_date like #{startDate}
+			</if>
+			<if test="endDate!=null">
+				end_date like #{endDate}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppContractProduct" parameterType="com.micro.msb.beans.AppContractProductSearchBean" resultMap="appContractProductResult">         
+		select * from app_contract_product  
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="contractCode!=null">
+				contract_code like #{contractCode}
+			</if>
+			<if test="contractType!=null">
+				contract_type like #{contractType}
+			</if>
+			<if test="productCode!=null">
+				product_code like #{productCode}
+			</if>
+			<if test="productStatus!=null">
+				product_status like #{productStatus}
+			</if>
+			<if test="startDate!=null">
+				start_date like #{startDate}
+			</if>
+			<if test="endDate!=null">
+				end_date like #{endDate}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

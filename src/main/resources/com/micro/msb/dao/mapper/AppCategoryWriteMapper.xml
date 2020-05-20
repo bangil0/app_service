@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appCategoryWriteResult" type="AppCategoryWriteBean">
+		<result property="recordId" column="record_id"/>
+		<result property="categoryCode" column="category_code"/>
+		<result property="categoryName" column="category_name"/>
+		<result property="categoryDesc" column="category_desc"/>
+	</resultMap>
+	
+	<update id="writeAppCategory" parameterType="com.micro.msb.beans.AppCategoryWriteBean">
+		update app_category set record_id = #{recordId},
+		category_code = #{categoryCode},
+		category_name = #{categoryName},
+		category_desc = #{categoryDesc} where record_id = #{recordId};
+	</update>
+
+</mapper>

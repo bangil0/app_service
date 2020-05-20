@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appCategoryNewResult" type="AppCategoryNewBean">
+		<result property="recordId" column="record_id"/>
+		<result property="categoryCode" column="category_code"/>
+		<result property="categoryName" column="category_name"/>
+		<result property="categoryDesc" column="category_desc"/>
+	</resultMap>
+	
+	<insert id="newAppCategory" parameterType="com.micro.msb.beans.AppCategoryNewBean">
+		insert into app_category(record_id,category_code,category_name,category_desc) 
+		values (#{recordId},#{categoryCode},#{categoryName},#{categoryDesc});
+	</insert>
+
+</mapper>

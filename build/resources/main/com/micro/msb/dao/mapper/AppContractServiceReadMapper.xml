@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appContractServiceReadResult" type="AppContractServiceReadBean">
+		<result property="recordId" column="record_id"/>
+		<result property="contractCode" column="contract_code"/>
+		<result property="contractType" column="contract_type"/>
+		<result property="serviceCode" column="service_code"/>
+		<result property="serviceStatus" column="service_status"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+		<collection property="appServiceRecords" column="record_id" select="readAppContractServiceAppServiceRecords"/>
+	</resultMap>
+	
+	<select id="readAppContractService" parameterType="com.micro.msb.beans.AppContractServiceReadBean" resultMap="appContractServiceReadResult">         
+		select * from app_contract_service where record_id = #{recordId};
+	</select>
+
+	<select id="readAppContractServiceAppServiceRecords" parameterType="Integer" resultMap="appServiceRecordsResult">         
+		select * from app_service_records where record_id = #{recordId};
+	</select>
+  
+</mapper>

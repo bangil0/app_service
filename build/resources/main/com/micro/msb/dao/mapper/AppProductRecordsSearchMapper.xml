@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appProductRecordsResult" type="AppProductRecordsBean">
+		<result property="recordId" column="record_id"/>
+		<result property="productCode" column="product_code"/>
+		<result property="textAttribute01" column="text_attribute_01"/>
+		<result property="textAttribute02" column="text_attribute_02"/>
+		<result property="textAttribute03" column="text_attribute_03"/>
+		<result property="textAttribute04" column="text_attribute_04"/>
+		<result property="textAttribute05" column="text_attribute_05"/>
+		<result property="textAttribute06" column="text_attribute_06"/>
+		<result property="textAttribute07" column="text_attribute_07"/>
+		<result property="textAttribute08" column="text_attribute_08"/>
+		<result property="textAttribute09" column="text_attribute_09"/>
+		<result property="textAttribute10" column="text_attribute_10"/>
+		<result property="intAttribute01" column="int_attribute_01"/>
+		<result property="intAttribute02" column="int_attribute_02"/>
+		<result property="intAttribute03" column="int_attribute_03"/>
+		<result property="intAttribute04" column="int_attribute_04"/>
+		<result property="intAttribute05" column="int_attribute_05"/>
+		<result property="createdDate" column="created_date"/>
+		<result property="contractCode" column="contract_code"/>
+	</resultMap>
+
+	<select id="countAppProductRecordsSearch" parameterType="com.micro.msb.beans.AppProductRecordsSearchBean" resultType="Integer">
+		select count(*) from app_product_records
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="productCode!=null">
+				product_code like #{productCode}
+			</if>
+			<if test="textAttribute01!=null">
+				text_attribute_01 like #{textAttribute01}
+			</if>
+			<if test="textAttribute02!=null">
+				text_attribute_02 like #{textAttribute02}
+			</if>
+			<if test="textAttribute03!=null">
+				text_attribute_03 like #{textAttribute03}
+			</if>
+			<if test="textAttribute04!=null">
+				text_attribute_04 like #{textAttribute04}
+			</if>
+			<if test="textAttribute05!=null">
+				text_attribute_05 like #{textAttribute05}
+			</if>
+			<if test="textAttribute06!=null">
+				text_attribute_06 like #{textAttribute06}
+			</if>
+			<if test="textAttribute07!=null">
+				text_attribute_07 like #{textAttribute07}
+			</if>
+			<if test="textAttribute08!=null">
+				text_attribute_08 like #{textAttribute08}
+			</if>
+			<if test="textAttribute09!=null">
+				text_attribute_09 like #{textAttribute09}
+			</if>
+			<if test="textAttribute10!=null">
+				text_attribute_10 like #{textAttribute10}
+			</if>
+			<if test="intAttribute01!=null">
+				int_attribute_01 like #{intAttribute01}
+			</if>
+			<if test="intAttribute02!=null">
+				int_attribute_02 like #{intAttribute02}
+			</if>
+			<if test="intAttribute03!=null">
+				int_attribute_03 like #{intAttribute03}
+			</if>
+			<if test="intAttribute04!=null">
+				int_attribute_04 like #{intAttribute04}
+			</if>
+			<if test="intAttribute05!=null">
+				int_attribute_05 like #{intAttribute05}
+			</if>
+			<if test="createdDate!=null">
+				created_date like #{createdDate}
+			</if>
+			<if test="contractCode!=null">
+				contract_code like #{contractCode}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppProductRecords" parameterType="com.micro.msb.beans.AppProductRecordsSearchBean" resultMap="appProductRecordsResult">         
+		select * from app_product_records  
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="productCode!=null">
+				product_code like #{productCode}
+			</if>
+			<if test="textAttribute01!=null">
+				text_attribute_01 like #{textAttribute01}
+			</if>
+			<if test="textAttribute02!=null">
+				text_attribute_02 like #{textAttribute02}
+			</if>
+			<if test="textAttribute03!=null">
+				text_attribute_03 like #{textAttribute03}
+			</if>
+			<if test="textAttribute04!=null">
+				text_attribute_04 like #{textAttribute04}
+			</if>
+			<if test="textAttribute05!=null">
+				text_attribute_05 like #{textAttribute05}
+			</if>
+			<if test="textAttribute06!=null">
+				text_attribute_06 like #{textAttribute06}
+			</if>
+			<if test="textAttribute07!=null">
+				text_attribute_07 like #{textAttribute07}
+			</if>
+			<if test="textAttribute08!=null">
+				text_attribute_08 like #{textAttribute08}
+			</if>
+			<if test="textAttribute09!=null">
+				text_attribute_09 like #{textAttribute09}
+			</if>
+			<if test="textAttribute10!=null">
+				text_attribute_10 like #{textAttribute10}
+			</if>
+			<if test="intAttribute01!=null">
+				int_attribute_01 like #{intAttribute01}
+			</if>
+			<if test="intAttribute02!=null">
+				int_attribute_02 like #{intAttribute02}
+			</if>
+			<if test="intAttribute03!=null">
+				int_attribute_03 like #{intAttribute03}
+			</if>
+			<if test="intAttribute04!=null">
+				int_attribute_04 like #{intAttribute04}
+			</if>
+			<if test="intAttribute05!=null">
+				int_attribute_05 like #{intAttribute05}
+			</if>
+			<if test="createdDate!=null">
+				created_date like #{createdDate}
+			</if>
+			<if test="contractCode!=null">
+				contract_code like #{contractCode}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

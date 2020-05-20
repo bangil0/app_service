@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appGroupsResult" type="AppGroupsBean">
+		<result property="groupId" column="group_id"/>
+		<result property="groupName" column="group_name"/>
+	</resultMap>
+
+	<select id="countAppGroupsSearch" parameterType="com.micro.msb.beans.AppGroupsSearchBean" resultType="Integer">
+		select count(*) from app_groups
+		<where>
+			<if test="groupId!=null">
+				group_id like #{groupId}
+			</if>
+			<if test="groupName!=null">
+				group_name like #{groupName}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppGroups" parameterType="com.micro.msb.beans.AppGroupsSearchBean" resultMap="appGroupsResult">         
+		select * from app_groups  
+		<where>
+			<if test="groupId!=null">
+				group_id like #{groupId}
+			</if>
+			<if test="groupName!=null">
+				group_name like #{groupName}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

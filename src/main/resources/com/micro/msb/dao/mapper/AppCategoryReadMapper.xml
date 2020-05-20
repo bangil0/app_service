@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appCategoryReadResult" type="AppCategoryReadBean">
+		<result property="recordId" column="record_id"/>
+		<result property="categoryCode" column="category_code"/>
+		<result property="categoryName" column="category_name"/>
+		<result property="categoryDesc" column="category_desc"/>
+		<collection property="appDevice" column="record_id" select="readAppCategoryAppDevice"/>
+		<collection property="appProduct" column="record_id" select="readAppCategoryAppProduct"/>
+		<collection property="appService" column="record_id" select="readAppCategoryAppService"/>
+	</resultMap>
+	
+	<select id="readAppCategory" parameterType="com.micro.msb.beans.AppCategoryReadBean" resultMap="appCategoryReadResult">         
+		select * from app_category where record_id = #{recordId};
+	</select>
+
+	<select id="readAppCategoryAppDevice" parameterType="Integer" resultMap="appDeviceResult">         
+		select * from app_device where record_id = #{recordId};
+	</select>
+  
+	<select id="readAppCategoryAppProduct" parameterType="Integer" resultMap="appProductResult">         
+		select * from app_product where record_id = #{recordId};
+	</select>
+  
+	<select id="readAppCategoryAppService" parameterType="Integer" resultMap="appServiceResult">         
+		select * from app_service where record_id = #{recordId};
+	</select>
+  
+</mapper>

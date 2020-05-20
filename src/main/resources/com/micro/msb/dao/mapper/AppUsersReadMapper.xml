@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appUsersReadResult" type="AppUsersReadBean">
+		<result property="username" column="username"/>
+		<result property="password" column="password"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="mobile" column="mobile"/>
+		<result property="enabled" column="enabled"/>
+		<result property="token" column="token"/>
+		<collection property="appAuthorities" column="username" select="readAppUsersAppAuthorities"/>
+		<collection property="appContact" column="username" select="readAppUsersAppContact"/>
+		<collection property="appContract" column="username" select="readAppUsersAppContract"/>
+		<collection property="appGroupMembers" column="username" select="readAppUsersAppGroupMembers"/>
+		<collection property="appMessage" column="username" select="readAppUsersAppMessage"/>
+		<collection property="appPersistentLogins" column="username" select="readAppUsersAppPersistentLogins"/>
+		<collection property="appRoom" column="username" select="readAppUsersAppRoom"/>
+	</resultMap>
+	
+	<select id="readAppUsers" parameterType="com.micro.msb.beans.AppUsersReadBean" resultMap="appUsersReadResult">         
+		select * from app_users where username = #{username};
+	</select>
+
+	<select id="readAppUsersAppAuthorities" parameterType="String" resultMap="appAuthoritiesResult">         
+		select * from app_authorities where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppContact" parameterType="String" resultMap="appContactResult">         
+		select * from app_contact where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppContract" parameterType="String" resultMap="appContractResult">         
+		select * from app_contract where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppGroupMembers" parameterType="String" resultMap="appGroupMembersResult">         
+		select * from app_group_members where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppMessage" parameterType="String" resultMap="appMessageResult">         
+		select * from app_message where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppPersistentLogins" parameterType="String" resultMap="appPersistentLoginsResult">         
+		select * from app_persistent_logins where username = #{username};
+	</select>
+  
+	<select id="readAppUsersAppRoom" parameterType="String" resultMap="appRoomResult">         
+		select * from app_room where username = #{username};
+	</select>
+  
+</mapper>

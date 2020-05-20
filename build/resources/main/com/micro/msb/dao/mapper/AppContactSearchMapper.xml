@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appContactResult" type="AppContactBean">
+		<result property="username" column="username"/>
+		<result property="subscription" column="subscription"/>
+		<result property="jid" column="jid"/>
+		<result property="nickname" column="nickname"/>
+		<result property="joindate" column="joindate"/>
+		<result property="show" column="show"/>
+		<result property="status" column="status"/>
+		<result property="lastseen" column="lastseen"/>
+		<result property="unread" column="unread"/>
+		<result property="key" column="key"/>
+	</resultMap>
+
+	<select id="countAppContactSearch" parameterType="com.micro.msb.beans.AppContactSearchBean" resultType="Integer">
+		select count(*) from app_contact
+		<where>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+			<if test="subscription!=null">
+				subscription like #{subscription}
+			</if>
+			<if test="jid!=null">
+				jid like #{jid}
+			</if>
+			<if test="nickname!=null">
+				nickname like #{nickname}
+			</if>
+			<if test="joindate!=null">
+				joindate like #{joindate}
+			</if>
+			<if test="show!=null">
+				show like #{show}
+			</if>
+			<if test="status!=null">
+				status like #{status}
+			</if>
+			<if test="lastseen!=null">
+				lastseen like #{lastseen}
+			</if>
+			<if test="unread!=null">
+				unread like #{unread}
+			</if>
+			<if test="key!=null">
+				key like #{key}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppContact" parameterType="com.micro.msb.beans.AppContactSearchBean" resultMap="appContactResult">         
+		select * from app_contact  
+		<where>
+			<if test="username!=null">
+				username like #{username}
+			</if>
+			<if test="subscription!=null">
+				subscription like #{subscription}
+			</if>
+			<if test="jid!=null">
+				jid like #{jid}
+			</if>
+			<if test="nickname!=null">
+				nickname like #{nickname}
+			</if>
+			<if test="joindate!=null">
+				joindate like #{joindate}
+			</if>
+			<if test="show!=null">
+				show like #{show}
+			</if>
+			<if test="status!=null">
+				status like #{status}
+			</if>
+			<if test="lastseen!=null">
+				lastseen like #{lastseen}
+			</if>
+			<if test="unread!=null">
+				unread like #{unread}
+			</if>
+			<if test="key!=null">
+				key like #{key}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

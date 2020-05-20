@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appAuthoritiesDeleteResult" type="AppAuthoritiesDeleteBean">
+		<result property="username" column="username"/>
+		<result property="authority" column="authority"/>
+	</resultMap>
+	
+	<delete id="deleteAppAuthorities" parameterType="com.micro.msb.beans.AppAuthoritiesDeleteBean">
+		delete from app_authorities where username = #{username};
+	</delete>
+
+</mapper>

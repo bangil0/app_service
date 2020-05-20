@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appPersistentLoginsReadResult" type="AppPersistentLoginsReadBean">
+		<result property="username" column="username"/>
+		<result property="series" column="series"/>
+		<result property="token" column="token"/>
+		<result property="lastUsed" column="last_used"/>
+	</resultMap>
+	
+	<select id="readAppPersistentLogins" parameterType="com.micro.msb.beans.AppPersistentLoginsReadBean" resultMap="appPersistentLoginsReadResult">         
+		select * from app_persistent_logins where username = #{username};
+	</select>
+
+</mapper>

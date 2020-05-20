@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appServiceResult" type="AppServiceBean">
+		<result property="recordId" column="record_id"/>
+		<result property="serviceCode" column="service_code"/>
+		<result property="serviceName" column="service_name"/>
+		<result property="serviceDesc" column="service_desc"/>
+		<result property="categoryCode" column="category_code"/>
+	</resultMap>
+
+	<select id="countAppServiceSearch" parameterType="com.micro.msb.beans.AppServiceSearchBean" resultType="Integer">
+		select count(*) from app_service
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="serviceCode!=null">
+				service_code like #{serviceCode}
+			</if>
+			<if test="serviceName!=null">
+				service_name like #{serviceName}
+			</if>
+			<if test="serviceDesc!=null">
+				service_desc like #{serviceDesc}
+			</if>
+			<if test="categoryCode!=null">
+				category_code like #{categoryCode}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppService" parameterType="com.micro.msb.beans.AppServiceSearchBean" resultMap="appServiceResult">         
+		select * from app_service  
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="serviceCode!=null">
+				service_code like #{serviceCode}
+			</if>
+			<if test="serviceName!=null">
+				service_name like #{serviceName}
+			</if>
+			<if test="serviceDesc!=null">
+				service_desc like #{serviceDesc}
+			</if>
+			<if test="categoryCode!=null">
+				category_code like #{categoryCode}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

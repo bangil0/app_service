@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+	
+	<resultMap id="appDeviceResult" type="AppDeviceBean">
+		<result property="recordId" column="record_id"/>
+		<result property="deviceCode" column="device_code"/>
+		<result property="deviceName" column="device_name"/>
+		<result property="deviceDesc" column="device_desc"/>
+		<result property="categoryCode" column="category_code"/>
+	</resultMap>
+
+	<select id="countAppDeviceSearch" parameterType="com.micro.msb.beans.AppDeviceSearchBean" resultType="Integer">
+		select count(*) from app_device
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="deviceCode!=null">
+				device_code like #{deviceCode}
+			</if>
+			<if test="deviceName!=null">
+				device_name like #{deviceName}
+			</if>
+			<if test="deviceDesc!=null">
+				device_desc like #{deviceDesc}
+			</if>
+			<if test="categoryCode!=null">
+				category_code like #{categoryCode}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchAppDevice" parameterType="com.micro.msb.beans.AppDeviceSearchBean" resultMap="appDeviceResult">         
+		select * from app_device  
+		<where>
+			<if test="recordId!=null">
+				record_id like #{recordId}
+			</if>
+			<if test="deviceCode!=null">
+				device_code like #{deviceCode}
+			</if>
+			<if test="deviceName!=null">
+				device_name like #{deviceName}
+			</if>
+			<if test="deviceDesc!=null">
+				device_desc like #{deviceDesc}
+			</if>
+			<if test="categoryCode!=null">
+				category_code like #{categoryCode}
+			</if>
+		</where> limit 10 offset #{rowid}
+	</select>
+
+</mapper>

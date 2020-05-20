@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appDeviceWriteResult" type="AppDeviceWriteBean">
+		<result property="recordId" column="record_id"/>
+		<result property="deviceCode" column="device_code"/>
+		<result property="deviceName" column="device_name"/>
+		<result property="deviceDesc" column="device_desc"/>
+		<result property="categoryCode" column="category_code"/>
+	</resultMap>
+	
+	<update id="writeAppDevice" parameterType="com.micro.msb.beans.AppDeviceWriteBean">
+		update app_device set record_id = #{recordId},
+		device_code = #{deviceCode},
+		device_name = #{deviceName},
+		device_desc = #{deviceDesc},
+		category_code = #{categoryCode} where record_id = #{recordId};
+	</update>
+
+</mapper>

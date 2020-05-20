@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appContractDeviceWriteResult" type="AppContractDeviceWriteBean">
+		<result property="recordId" column="record_id"/>
+		<result property="contractCode" column="contract_code"/>
+		<result property="contractType" column="contract_type"/>
+		<result property="deviceCode" column="device_code"/>
+		<result property="deviceStatus" column="device_status"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+	</resultMap>
+	
+	<update id="writeAppContractDevice" parameterType="com.micro.msb.beans.AppContractDeviceWriteBean">
+		update app_contract_device set record_id = #{recordId},
+		contract_code = #{contractCode},
+		contract_type = #{contractType},
+		device_code = #{deviceCode},
+		device_status = #{deviceStatus},
+		start_date = #{startDate},
+		end_date = #{endDate} where record_id = #{recordId};
+	</update>
+
+</mapper>

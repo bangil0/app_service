@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.msb.dao.mapper.DaoMapper">			
+		
+	<resultMap id="appMessageNewResult" type="AppMessageNewBean">
+		<result property="username" column="username"/>
+		<result property="jid" column="jid"/>
+		<result property="msgtime" column="msgtime"/>
+		<result property="msgtype" column="msgType"/>
+		<result property="msgsubject" column="msgSubject"/>
+		<result property="msgtext" column="msgText"/>
+	</resultMap>
+	
+	<insert id="newAppMessage" parameterType="com.micro.msb.beans.AppMessageNewBean">
+		insert into app_message(username,jid,msgtime,msgType,msgSubject,msgText) 
+		values (#{username},#{jid},#{msgtime},#{msgtype},#{msgsubject},#{msgtext});
+	</insert>
+
+</mapper>
